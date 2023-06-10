@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
+application = app
 
 pickle.load(open('/config/workspace/notebook/model/ridge.pkl','rb'))
 pickle.load(open('/config/workspace/notebook/model/scaler.pkl','rb'))
@@ -39,4 +40,4 @@ def predict_datapoint():
 
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")
+    application.run(host="0.0.0.0")
